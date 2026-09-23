@@ -1307,15 +1307,15 @@ defmodule ImageManipulatorWeb.StudioSections do
           :for={item <- @saved_images}
           class="my-images__card"
         >
-          <div class="my-images__card__thumb" phx-click="open_lightbox" phx-value-id={item.id}>
+          <div class="my-images__card--hover-container" phx-click="open_lightbox" phx-value-id={item.id}>
             <img
               src={Workspace.media_url(item.path, width: @thumb_width)}
               alt={item.name}
               loading="lazy"
               decoding="async"
             />
-            <span class="my-images__card__format">{item.format_label}</span>
-            <div class="my-images__card__overlay">
+            <span class="card__format">{item.format_label}</span>
+            <div class="my-images__card--overlay">
               <button class="btn btn--icon" phx-click="edit_image" phx-value-id={item.id} title="Edit">
                 <.icon name={:edit} size={16} />
               </button>
@@ -1327,12 +1327,12 @@ defmodule ImageManipulatorWeb.StudioSections do
               </button>
             </div>
           </div>
-          <div class="my-images__card__body">
-            <span class="my-images__card__name">{item.name}</span>
-            <span class="my-images__card__meta">
+          <span class="card__body">
+            <span class="card__name">{item.name}</span>
+            <span class="card__meta">
               {Fmt.bytes(item.bytes)} · {Fmt.ago(item.mtime)}
             </span>
-          </div>
+          </span>
         </div>
       </div>
 
