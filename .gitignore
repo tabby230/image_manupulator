@@ -35,3 +35,7 @@ image_manipulator-*.tar
 npm-debug.log
 /assets/node_modules/
 
+
+# Local workspace data
+priv/workspace/cache/
+priv/workspace/sessions/
